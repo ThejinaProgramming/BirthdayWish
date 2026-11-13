@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Kia ✨ 13 · 11 · 2026</title>
+<meta name="description" content="A birthday celebration for Kia — 34 beautiful years, 1992 to 2026.">
+<meta property="og:title" content="Happy Birthday Kia ✨">
+<meta property="og:description" content="34 beautiful years · 1992 → 2026. Open your gift!">
+<meta property="og:image" content="assets/art/a02.webp">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎀</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ============ INTRO GIFT ============ -->
+<div id="intro" class="intro">
+  <div class="intro-stars"></div>
+  <div class="intro-inner">
+    <p class="intro-kicker">A little something for</p>
+    <h1 class="intro-name">Kia</h1>
+    <button class="gift" id="giftBtn" aria-label="Open your gift">
+      <span class="gift-lid"><span class="gift-bow"></span></span>
+      <span class="gift-box"></span>
+    </button>
+    <p class="intro-hint">Tap the gift to open ✨ <small>(sound on for the full experience)</small></p>
+  </div>
+</div>
+
+<!-- ============ FLIGHT TRANSITION ============ -->
+<div id="flight" class="flight" aria-hidden="true">
+  <div class="flight-sky">
+    <div class="cloud c1"></div><div class="cloud c2"></div><div class="cloud c3"></div><div class="cloud c4"></div>
+  </div>
+  <div class="boarding">
+    <div class="bp-head"><span>KIA AIRWAYS</span><span>✈ BOARDING PASS</span></div>
+    <div class="bp-route">
+      <div><b id="fFromCode">CMB</b><small id="fFromCity">Colombo</small></div>
+      <div class="bp-plane">✈</div>
+      <div><b id="fToCode">LHR</b><small id="fToCity">London</small></div>
+    </div>
+    <div class="bp-meta"><span>PASSENGER <b>KIA</b></span><span>FLIGHT <b id="fNo">KA1311</b></span><span>SEAT <b>34K</b></span><span>GATE <b>13</b></span></div>
+    <div class="bp-dest">Now flying to <b id="fDest">Her Story</b></div>
+  </div>
+  <svg class="flight-path" viewBox="0 0 1000 400" preserveAspectRatio="none">
+    <path id="fPath" d="M80 330 Q500 -40 920 300" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="3" stroke-dasharray="10 12"/>
+  </svg>
+  <div class="pin pin-a"><span></span><em id="pinA">Sri Lanka</em></div>
+  <div class="pin pin-b"><span></span><em id="pinB">UK</em></div>
+  <div class="plane" id="plane">
+    <svg viewBox="0 0 120 60"><g fill="#fff"><path d="M8 30 C8 26 14 24 22 24 L92 24 C104 24 116 27 116 30 C116 33 104 36 92 36 L22 36 C14 36 8 34 8 30Z"/><path d="M52 26 L36 2 L46 2 L74 26Z"/><path d="M52 34 L36 58 L46 58 L74 34Z"/><path d="M14 27 L6 12 L13 12 L24 26Z"/></g><g fill="#ff7eb6"><rect x="30" y="27.5" width="54" height="2" rx="1"/></g><g fill="#7a4b9a"><circle cx="100" cy="29" r="2.4"/><circle cx="92" cy="29" r="2.4"/></g></svg>
+  </div>
+  <button class="flight-skip" id="flightSkip">Skip ›</button>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a class="brand" href="#home" data-tab="home"><span class="brand-script">Kia</span><span class="brand-badge">34</span></a>
+  <nav class="tabs" id="tabs">
+    <a href="#home" data-tab="home" class="active">Home</a>
+    <a href="#journey" data-tab="journey">Her Story</a>
+    <a href="#gallery" data-tab="gallery">Gallery</a>
+    <a href="#wishes" data-tab="wishes">Wishes</a>
+    <a href="#about" data-tab="about">About Kia</a>
+    <a href="#surprises" data-tab="surprises">Surprises</a>
+    <a href="#thanks" data-tab="thanks" class="tab-cta">Say Thanks 💌</a>
+  </nav>
+  <div class="nav-tools">
+    <button id="musicBtn" class="icon-btn" title="Play / pause birthday tune" aria-label="Toggle music">♫</button>
+    <button id="menuBtn" class="icon-btn menu-btn" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="bg-orbs"><i></i><i></i><i></i></div>
+<canvas id="fx" class="fx"></canvas>
+
+<main id="app">
+
+<!-- ============ HOME ============ -->
+<section class="tab-page active" id="home">
+  <div class="hero">
+    <div class="hero-text">
+      <div class="today-chip"><span class="pulse"></span> Today is her birthday · Friday, 13 November 2026</div>
+      <h1 class="hero-title">
+        <span class="ht-small">Happy Birthday</span>
+        <span class="ht-name">Kia</span>
+      </h1>
+      <p class="hero-sub">Thirty-four years of grace, courage and wanderlust — from a tiny miracle in Kalutara to a queen of her own story.</p>
+      <div class="year-run">
+        <span class="yr" id="yrFrom">1992</span>
+        <span class="yr-line"><i></i></span>
+        <span class="yr" id="yrTo">1992</span>
+      </div>
+      <p class="yr-caption"><b id="ageWord">34</b> beautiful years of a <em>successful journey</em></p>
+      <div class="hero-cta">
+        <a href="#journey" data-tab="journey" class="btn btn-primary">✈ Watch her story</a>
+        <a href="#surprises" data-tab="surprises" class="btn btn-ghost">🎁 Open surprises</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="halo"></div>
+      <div class="ring r1"></div><div class="ring r2"></div>
+      <img src="assets/cut/k01.webp" alt="Kia" class="hero-kia" id="heroKia">
+      <div class="float-badge fb1">👑 Birthday Queen</div>
+      <div class="float-badge fb2">🌍 4 countries & counting</div>
+      <div class="float-badge fb3">🎓 Stats · Digital Marketing</div>
+    </div>
+  </div>
+
+  <div class="counters">
+    <div class="counter-card glass">
+      <p class="cc-label">🎂 Her birthday glow ends in</p>
+      <div class="clock" id="cdToday"></div>
+      <p class="cc-foot">Sri Lanka time · make every second count</p>
+    </div>
+    <div class="counter-card glass">
+      <p class="cc-label">🌟 Countdown to her 35th milestone</p>
+      <div class="clock" id="cd35"></div>
+      <p class="cc-foot">13 November 2027</p>
+    </div>
+    <div class="counter-card glass">
+      <p class="cc-label">💓 Time Kia has lit up this world</p>
+      <div class="live-stats">
+        <div><b id="sDays">0</b><small>days</small></div>
+        <div><b id="sHours">0</b><small>hours</small></div>
+        <div><b id="sBeats">0</b><small>heartbeats*</small></div>
+        <div><b id="sSuns">34</b><small>trips round the sun</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee"><div class="marquee-track" id="marquee"></div></div>
+
+  <div class="quick-grid">
+    <a href="#journey" data-tab="journey" class="quick glass"><span>📖</span><b>Her Story</b><small>1992 → 2026, animated</small></a>
+    <a href="#gallery" data-tab="gallery" class="quick glass"><span>🖼️</span><b>The Gallery</b><small>Memories turned into paintings</small></a>
+    <a href="#wishes" data-tab="wishes" class="quick glass"><span>💐</span><b>Wishes</b><small>For every dream ahead</small></a>
+    <a href="#surprises" data-tab="surprises" class="quick glass"><span>🎁</span><b>Surprises</b><small>8 gifts to unwrap</small></a>
+  </div>
+</section>
+
+<!-- ============ JOURNEY ============ -->
+<section class="tab-page" id="journey">
+  <div class="section-head">
+    <p class="kicker">Chapter by chapter</p>
+    <h2>The Story of Kia</h2>
+    <p class="lead">A little girl from Kalutara who grew up to see the world. Press play and travel through 34 years.</p>
+  </div>
+  <div class="story" id="story">
+    <div class="story-stage" id="stage"></div>
+    <div class="story-caption">
+      <span class="sc-year" id="scYear">1992</span>
+      <h3 id="scTitle">A star is born</h3>
+      <p id="scText"></p>
+    </div>
+    <div class="story-controls">
+      <button class="sc-btn" id="scPrev" aria-label="Previous chapter">‹</button>
+      <button class="sc-btn sc-play" id="scPlay" aria-label="Play or pause">❚❚</button>
+      <button class="sc-btn" id="scNext" aria-label="Next chapter">›</button>
+    </div>
+    <div class="story-progress" id="scDots"></div>
+  </div>
+  <div class="timeline" id="timeline"></div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="tab-page" id="gallery">
+  <div class="section-head">
+    <p class="kicker">The Kia Collection</p>
+    <h2>Painted Memories</h2>
+    <p class="lead">Every photograph re-imagined as a painting, hung in her very own gallery. Click any frame to view it up close.</p>
+  </div>
+  <div class="gallery-filters" id="gFilters">
+    <button class="active" data-f="all">All works</button>
+    <button data-f="royal">Royal portraits</button>
+    <button data-f="uk">United Kingdom</button>
+    <button data-f="europe">Paris & Rome</button>
+    <button data-f="moments">Moments</button>
+  </div>
+  <div class="museum" id="museum"></div>
+</section>
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+  <figure class="lb-frame"><img id="lbImg" alt=""><figcaption><b id="lbTitle"></b><span id="lbNote"></span></figcaption></figure>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next">›</button>
+</div>
+
+<!-- ============ WISHES ============ -->
+<section class="tab-page" id="wishes">
+  <div class="section-head">
+    <p class="kicker">From the heart</p>
+    <h2>Wishes for Kia</h2>
+    <p class="lead">Tap a card to turn it over. Each one is a wish for the year ahead and every year after it.</p>
+  </div>
+  <div class="wish-grid" id="wishGrid"></div>
+
+  <div class="lantern-zone glass">
+    <div class="lz-text">
+      <h3>Release a wish lantern 🏮</h3>
+      <p>Write a wish for Kia and send it floating into the night sky.</p>
+      <form id="lanternForm" class="lantern-form">
+        <input id="lanternInput" maxlength="60" placeholder="e.g. May every dream come true…" aria-label="Your wish">
+        <button class="btn btn-primary" type="submit">Release ✨</button>
+      </form>
+    </div>
+    <div class="lantern-sky" id="lanternSky"></div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="tab-page" id="about">
+  <div class="section-head">
+    <p class="kicker">Meet the birthday girl</p>
+    <h2>All About Kia</h2>
+  </div>
+  <div class="about-wrap">
+    <div class="id-card glass">
+      <div class="id-photo"><img src="assets/cut/k05.webp" alt="Kia portrait"></div>
+      <h3 class="id-name">Kia</h3>
+      <p class="id-tag">Statistician · Digital Marketer · Globetrotter</p>
+      <ul class="id-list">
+        <li><span>🎂 Birthday</span><b>13 November 1992</b></li>
+        <li><span>🏥 Birthplace</span><b>Teaching Hospital, Kalutara</b></li>
+        <li><span>🌏 Home</span><b>Sri Lanka 🇱🇰</b></li>
+        <li><span>♏ Star sign</span><b>Scorpio</b></li>
+        <li><span>🐒 Chinese zodiac</span><b>Water Monkey</b></li>
+        <li><span>💎 Birthstone</span><b>Topaz</b></li>
+        <li><span>🌼 Birth flower</span><b>Chrysanthemum</b></li>
+      </ul>
+    </div>
+    <div class="about-right">
+      <div class="edu glass">
+        <h3>🎓 Education</h3>
+        <div class="edu-line">
+          <div class="edu-item"><span class="edu-dot">🏫</span><div><b>C.W.W. Kannangara Central College</b><small>Mathugama · school years</small></div></div>
+          <div class="edu-item"><span class="edu-dot">📊</span><div><b>University of Kelaniya</b><small>BSc in Statistics · Sri Lanka</small></div></div>
+          <div class="edu-item"><span class="edu-dot">💻</span><div><b>Master's in Digital Marketing</b><small>United Kingdom 🇬🇧</small></div></div>
+        </div>
+      </div>
+      <div class="passport glass">
+        <h3>🛂 Passport stamps</h3>
+        <div class="stamps">
+          <div class="stamp s1"><b>SRI LANKA</b><small>Home · since 1992</small></div>
+          <div class="stamp s2"><b>UNITED KINGDOM</b><small>Liverpool · Lake District · Peak District</small></div>
+          <div class="stamp s3"><b>FRANCE</b><small>Paris · Disneyland Paris</small></div>
+          <div class="stamp s4"><b>ITALY</b><small>Rome · Colosseum</small></div>
+          <div class="stamp s5 next"><b>NEXT?</b><small>The world is waiting…</small></div>
+        </div>
+      </div>
+      <div class="traits">
+        <div class="trait glass"><span>🧠</span><b>Brilliant mind</b><small>Numbers, data and patterns are her playground</small></div>
+        <div class="trait glass"><span>🌸</span><b>Graceful soul</b><small>Kind, warm and effortlessly elegant</small></div>
+        <div class="trait glass"><span>🧭</span><b>Fearless explorer</b><small>Collects passport stamps and memories</small></div>
+        <div class="trait glass"><span>🎸</span><b>Creative heart</b><small>Music, style and a camera-ready smile</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SURPRISES ============ -->
+<section class="tab-page" id="surprises">
+  <div class="section-head">
+    <p class="kicker">Unwrap them all</p>
+    <h2>Eight Little Surprises</h2>
+    <p class="lead">Each box hides something just for you, Kia. Open them one by one. <b id="openedCount">0</b>/8 opened.</p>
+  </div>
+  <div class="gift-grid" id="giftGrid"></div>
+</section>
+<div class="modal" id="modal"><div class="modal-card" id="modalCard"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div id="modalBody"></div></div></div>
+
+<!-- ============ THANKS ============ -->
+<section class="tab-page" id="thanks">
+  <div class="section-head">
+    <p class="kicker">Kia, your turn</p>
+    <h2>Send a Thank-You</h2>
+    <p class="lead">Liked your birthday surprise? Write a little note. It goes straight to Viber, ready to send.</p>
+  </div>
+  <div class="thanks-wrap">
+    <div class="envelope-art">
+      <div class="envelope" id="envelope">
+        <div class="env-back"></div>
+        <div class="env-letter"><p id="letterPreview">Your message will appear here…</p></div>
+        <div class="env-front"></div>
+        <div class="env-flap"></div>
+        <div class="env-heart">❤</div>
+      </div>
+      <img src="assets/cut/k17.webp" alt="" class="thanks-kia">
+    </div>
+    <form class="thanks-form glass" id="thanksForm">
+      <label>Choose a vibe
+        <div class="chips" id="vibeChips">
+          <button type="button" data-t="Thank you so much for this beautiful birthday surprise! It truly made my day 💖">💖 Heartfelt</button>
+          <button type="button" data-t="Wow! I did NOT expect this. Best birthday surprise ever 🤩🎉">🤩 Amazed</button>
+          <button type="button" data-t="I'm literally crying happy tears right now 🥹 Thank you for making me feel so special!">🥹 Emotional</button>
+          <button type="button" data-t="Thank you, my dear friend! Treat's on me next time 😄🍰">😄 Fun</button>
+        </div>
+      </label>
+      <label for="thanksMsg">Your message</label>
+      <textarea id="thanksMsg" rows="5" maxlength="1000" placeholder="Type your thank-you message here…"></textarea>
+      <div class="tf-row"><small id="charCount">0 / 1000</small></div>
+      <button class="btn btn-primary btn-wide" type="submit">Send on Viber <span class="viber-ico">✆</span></button>
+      <button class="btn btn-ghost btn-wide" type="button" id="copyMsg">Copy message</button>
+      <p class="tf-note">Viber opens with your message ready. Just tap <b>send</b>. Your message is also copied, so if it doesn't appear you can paste it in. (Viber needs to be installed on this device.)</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <p>Made with <span class="beat">❤</span> for <b>Kia</b> · 13 · 11 · 2026</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/journey.js"></script>
+<script src="js/surprises.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
